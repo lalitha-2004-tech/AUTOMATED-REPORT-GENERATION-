@@ -30,7 +30,9 @@ Report formats:
 PDF: Using reportlab or converting HTML to PDF.
          By automating report generation, you can save time, reduce errors, and focus on data analysis and decision making.##
 
+*OUTPUT
 
+![Image](https://github.com/user-attachments/assets/ad82e2ae-3766-4d43-941b-0b20f9f4a83e)
 
 
    
