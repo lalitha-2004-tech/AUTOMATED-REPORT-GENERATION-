@@ -1,0 +1,52 @@
+import csv
+
+# Data to be written to the CSV file
+data = [
+    ['Category', 'Value'],
+    ['A', 10],
+    ['B', 20],
+    ['C', 30],
+    ['D', 40],
+    ['E', 50]
+]
+
+# Writing to CSV
+with open('data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+
+print("CSV file 'data.csv' created successfully.")
+import pandas as pd
+import matplotlib.pyplot as plt
+from fpdf import FPDF
+
+# Step 1: Read and analyze data
+data = pd.read_csv('data.csv')
+summary = data.describe()
+
+# Step 2: Generate a plot
+plt.figure(figsize=(6, 4))
+plt.bar(data['Category'], data['Value'], color='skyblue')
+plt.title('Category Value Distribution')
+plt.xlabel('Category')
+plt.ylabel('Value')
+plt.tight_layout()
+plt.savefig('plot.png')
+plt.close()
+# Step 3: Create PDF report
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+# Title
+pdf.cell(200, 10, txt="Data Analysis Report", ln=True, align='C')
+pdf.ln(10)
+# Summary Table
+pdf.cell(200, 10, txt="Summary Statistics:", ln=True)
+for col in summary.columns:
+    pdf.cell(200, 10, txt=f"{col}: {summary[col]['mean']:.2f}", ln=True)
+pdf.ln(10)
+# Insert plot
+pdf.image('plot.png', x=10, y=pdf.get_y(), w=180)
+pdf.ln(90)
+# Save PDF
+pdf.output("report.pdf")
