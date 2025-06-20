@@ -12,7 +12,11 @@
 
 *MENTOR*: NEELA SANTHOSH
 
-## Here I have performed a task regarding Automated report generation using python. For writing this code, I used Visual studio for editing purpose.Automated report generation with python involves using scripts to create reports from data sources without manual intervention. This often includes extracting data or reads the data from a file, analyzes it and generates a formatted PDF report. Here is a breakdown of the process and tools involved:
+*DESCRIPTION*:
+
+*NAME OF THE PROJECT*: AUTOMATED REPORT GENERATION.
+
+Automated report generation with python involves using scripts to create reports from data sources without manual intervention. This often includes extracting data or reads the data from a file, analyzes it and generates a formatted PDF report. Here is a breakdown of the process and tools involved:
 
  core steps:
  1. Data Extraction: Fetching data from various sources like files like csv, excel.
